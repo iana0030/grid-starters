@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css Grid</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 2fr 1fr;
+            height: 100vh;
+            grid-gap: 5px;
+        }
+
+        .item {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .item-a {
+            background-color: orange;
+
+        }
+
+        .item-b {
+            background-color: darkseagreen;
+
+        }
+
+        .item-c {
+            background-color: darkred;
+
+        }
+
+        .item-d {}
+
+        @media screen and (min-width:768px) {
+            .container {
+                display: grid;
+                grid-template-areas: "header header header""sidebar main main""footer footer footer";
+                grid-template-rows: 1fr 2fr 1fr;
+                height: 100vh;
+                grid-gap: 5px;
+            }
+
+            .item {
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            .item-a {
+                background-color: orange;
+                grid-area: header;
+            }
+
+            .item-b {
+                background-color: darkseagreen;
+                grid-area: sidebar;
+            }
+
+            .item-c {
+                background-color: darkred;
+                grid-area: main;
+            }
+
+            .item-d {
+                background-color: skyblue;
+                grid-area: footer;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="container">
+        <div class="item item-a">A</div>
+        <div class="item item-b">B</div>
+        <div class="item item-c">C</div>
+        <div class="item item-d">D</div>
+    </main>
+
+</body></html>
